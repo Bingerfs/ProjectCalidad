@@ -1,7 +1,7 @@
 package com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatRules;
 
-import com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatControl.FigureNumerationFormat;
-import com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatControl.Format;
+import com.ucbcba.joel.ucbcorreccionformato.formatErrors.formatControl.FigureNumerationFormat;
+import com.ucbcba.joel.ucbcorreccionformato.formatErrors.formatControl.Format;
 import com.ucbcba.joel.ucbcorreccionformato.formatErrors.HighlightsReport.*;
 import com.ucbcba.joel.ucbcorreccionformato.formatErrors.ImagesOnPdf.ImageLocations;
 import com.ucbcba.joel.ucbcorreccionformato.formatErrors.ImagesOnPdf.PdfImage;

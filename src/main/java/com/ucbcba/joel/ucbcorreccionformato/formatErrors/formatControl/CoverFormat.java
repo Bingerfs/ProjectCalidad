@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatControl;
+package com.ucbcba.joel.ucbcorreccionformato.formatErrors.formatControl;
 
 import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;
 

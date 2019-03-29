@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.formalAspects;
+package com.ucbcba.joel.ucbcorreccionformato.formalaspects;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.springframework.web.bind.annotation.*;

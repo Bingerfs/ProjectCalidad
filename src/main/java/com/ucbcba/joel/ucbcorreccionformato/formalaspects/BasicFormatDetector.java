@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.formalAspects;
+package com.ucbcba.joel.ucbcorreccionformato.formalaspects;
 
 import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
 import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;

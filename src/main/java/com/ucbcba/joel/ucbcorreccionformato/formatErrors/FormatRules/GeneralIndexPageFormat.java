@@ -1,6 +1,6 @@
 package com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatRules;
 
-import com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatControl.GeneralIndexFormat;
+import com.ucbcba.joel.ucbcorreccionformato.formatErrors.formatControl.GeneralIndexFormat;
 import com.ucbcba.joel.ucbcorreccionformato.formatErrors.HighlightsReport.FormatErrorReport;
 import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
 import com.ucbcba.joel.ucbcorreccionformato.general.ReportFormatError;
