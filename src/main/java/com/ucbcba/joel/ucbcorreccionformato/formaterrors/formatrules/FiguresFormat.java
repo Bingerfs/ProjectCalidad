@@ -2,9 +2,9 @@ package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatControl.FigureNumerationFormat;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatControl.Format;
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.HighlightsReport.*;
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.ImagesOnPdf.ImageLocations;
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.ImagesOnPdf.PdfImage;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsReport.*;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.imagesonpdf.ImageLocations;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.imagesonpdf.PdfImage;
 import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
 import com.ucbcba.joel.ucbcorreccionformato.general.ReportFormatError;
 import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;

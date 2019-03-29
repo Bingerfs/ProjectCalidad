@@ -1,6 +1,6 @@
 package com.ucbcba.joel.ucbcorreccionformato.general;
 
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.HighlightsReport.*;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsReport.*;
 
 import java.util.ArrayList;
 import java.util.List;

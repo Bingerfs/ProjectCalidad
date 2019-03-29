@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.formaterrors.HighlightsReport;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsReport;
 
 public class FormatErrorReport {
     private Content content;

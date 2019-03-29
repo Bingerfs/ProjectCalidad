@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.formaterrors.ImagesOnPdf;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors.imagesonpdf;
 
 import org.apache.pdfbox.contentstream.PDFStreamEngine;
 import org.apache.pdfbox.contentstream.operator.DrawObject;
