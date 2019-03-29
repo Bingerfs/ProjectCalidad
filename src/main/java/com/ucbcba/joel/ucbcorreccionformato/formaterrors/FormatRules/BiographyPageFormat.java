@@ -135,11 +135,12 @@ public class BiographyPageFormat implements  FormatRule {
 
     public PatternBibliographyReferences getPattern(String lineWord){
 
-        Pattern discussion_list_bibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^<]*<[^>]+>[^<]*<[^>]+>[^(]*\\(fecha de consulta.+", Pattern.CASE_INSENSITIVE);
-        PatternBibliographyReferences discussion_list = new PatternBibliographyReferences("Listas de discusión",discussion_list_bibliography);
+        Pattern compile = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^<]*<[^>]+>[^<]*<[^>]+>[^(]*\\(fecha de consulta.+", Pattern.CASE_INSENSITIVE);
+        Pattern discussionsBibliographies = compile;
+        PatternBibliographyReferences discussionList = new PatternBibliographyReferences("Listas de discusión",discussionsBibliographies);
 
-        Pattern page_web_bibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^E]*En:[^<]*<[^>]+>[^,]*,[^(]*\\(fecha de consulta.+", Pattern.CASE_INSENSITIVE);
-        PatternBibliographyReferences page_web = new PatternBibliographyReferences("Página web",page_web_bibliography);
+        Pattern pageWebBibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^E]*En:[^<]*<[^>]+>[^,]*,[^(]*\\(fecha de consulta.+", Pattern.CASE_INSENSITIVE);
+        PatternBibliographyReferences page_web = new PatternBibliographyReferences("Página web",pageWebBibliography);
 
         Pattern email_bibliography = Pattern.compile("[^(]+\\([^)]+\\)[^(]*\\([^)]+\\)\\.[^“]*“[^”]+”\\.[^(]*\\([^)]+\\)[^(]*\\(fecha del mensaje.+", Pattern.CASE_INSENSITIVE);
         PatternBibliographyReferences email = new PatternBibliographyReferences("Correo electrónico",email_bibliography);
@@ -174,7 +175,7 @@ public class BiographyPageFormat implements  FormatRule {
 
         if (lineWord.contains("http")){
             if( lineWord.contains("@")){
-                return discussion_list;
+                return discussionList;
             }else{
                 return page_web;
             }
