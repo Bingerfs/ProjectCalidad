@@ -1,5 +1,7 @@
 package com.ucbcba.joel.ucbcorreccionformato.FormatErrors.FormatRules;
 
+
+
 import com.ucbcba.joel.ucbcorreccionformato.FormatErrors.Bibliographies.PatternBibliographyReferences;
 import com.ucbcba.joel.ucbcorreccionformato.FormatErrors.HighlightsReport.*;
 import com.ucbcba.joel.ucbcorreccionformato.General.GeneralSeeker;
