@@ -1,8 +1,8 @@
-package com.ucbcba.joel.ucbcorreccionformato.UploadDownloadFile.Service;
+package com.ucbcba.joel.ucbcorreccionformato.uploadDownloadFile.Service;
 
-import com.ucbcba.joel.ucbcorreccionformato.UploadDownloadFile.Exception.FileStorageException;
-import com.ucbcba.joel.ucbcorreccionformato.UploadDownloadFile.Exception.MyFileNotFoundException;
-import com.ucbcba.joel.ucbcorreccionformato.UploadDownloadFile.Property.FileStorageProperties;
+import com.ucbcba.joel.ucbcorreccionformato.uploadDownloadFile.exception.FileStorageException;
+import com.ucbcba.joel.ucbcorreccionformato.uploadDownloadFile.exception.MyFileNotFoundException;
+import com.ucbcba.joel.ucbcorreccionformato.uploadDownloadFile.Property.FileStorageProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;

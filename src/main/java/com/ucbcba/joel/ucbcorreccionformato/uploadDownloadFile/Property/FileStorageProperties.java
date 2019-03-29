@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.UploadDownloadFile.Property;
+package com.ucbcba.joel.ucbcorreccionformato.uploadDownloadFile.Property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

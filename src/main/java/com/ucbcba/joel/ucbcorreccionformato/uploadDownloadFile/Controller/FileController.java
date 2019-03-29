@@ -1,7 +1,7 @@
-package com.ucbcba.joel.ucbcorreccionformato.UploadDownloadFile.Controller;
+package com.ucbcba.joel.ucbcorreccionformato.uploadDownloadFile.Controller;
 
-import com.ucbcba.joel.ucbcorreccionformato.UploadDownloadFile.Payload.UploadFileResponse;
-import com.ucbcba.joel.ucbcorreccionformato.UploadDownloadFile.Service.FileStorageService;
+import com.ucbcba.joel.ucbcorreccionformato.uploadDownloadFile.Payload.UploadFileResponse;
+import com.ucbcba.joel.ucbcorreccionformato.uploadDownloadFile.Service.FileStorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +15,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 public class FileController {
