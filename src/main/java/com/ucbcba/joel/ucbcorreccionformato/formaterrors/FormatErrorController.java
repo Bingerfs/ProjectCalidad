@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class FormatErrorController {
 
-    @RequestMapping(value = "/api/formatErrors/{fileName:.+}",method = RequestMethod.GET)
+    @GetMapping(value = "/api/formatErrors/{fileName:.+}")
     public List<FormatErrorReport> greeting(@PathVariable String fileName, @RequestParam(value="coverPage") String coverPage
             , @RequestParam(value="generalIndexPageStart") String generalIndexPageStart, @RequestParam(value="generalIndexPageEnd") String generalIndexPageEnd
             , @RequestParam(value="figureTableIndexPageEnd") String figureTableIndexPageEnd, @RequestParam(value="biographyPage") String biographyPage
