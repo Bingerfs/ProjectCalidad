@@ -102,12 +102,13 @@ public class BiographyPageFormat implements  FormatRule {
             for (int i = 0;i<ref_bibliografy.size();i++){
                 String lineWord = ref_bibliografy.get(i);
                 List<WordsProperties> lineWordWithProperties = seeker.findWordsFromAPage(page,lineWord);
-                if (lineWordWithProperties.size() == 0) {
+                int linewordwithpropertiessize = lineWordWithProperties.size();
+                if (linewordwithpropertiessize == 0) {
                     lineWord = Normalizer.normalize(lineWord, Normalizer.Form.NFD);
                     lineWord = lineWord.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
                     lineWordWithProperties = seeker.findWordsFromAPage(page, lineWord);
                 }
-                if (lineWordWithProperties.size()!=0){
+                if (linewordwithpropertiessize !=0){
                     WordsProperties word = lineWordWithProperties.get(0);
                     BoundingRect boundingRect = new BoundingRect(word.getX(), word.getYPlusHeight(), word.getXPlusWidth(),word.getY(),pageWidth,pageHeight);
                     boundingRects.add(boundingRect);
