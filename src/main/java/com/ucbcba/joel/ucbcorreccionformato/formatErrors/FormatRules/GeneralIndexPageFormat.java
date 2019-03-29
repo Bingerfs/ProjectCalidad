@@ -1,10 +1,10 @@
-package com.ucbcba.joel.ucbcorreccionformato.FormatErrors.FormatRules;
+package com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatRules;
 
-import com.ucbcba.joel.ucbcorreccionformato.FormatErrors.FormatControl.GeneralIndexFormat;
-import com.ucbcba.joel.ucbcorreccionformato.FormatErrors.HighlightsReport.FormatErrorReport;
-import com.ucbcba.joel.ucbcorreccionformato.General.GeneralSeeker;
-import com.ucbcba.joel.ucbcorreccionformato.General.ReportFormatError;
-import com.ucbcba.joel.ucbcorreccionformato.General.WordsProperties;
+import com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatControl.GeneralIndexFormat;
+import com.ucbcba.joel.ucbcorreccionformato.formatErrors.HighlightsReport.FormatErrorReport;
+import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
+import com.ucbcba.joel.ucbcorreccionformato.general.ReportFormatError;
+import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 
@@ -56,7 +56,7 @@ public class GeneralIndexPageFormat implements FormatRule {
                         }
                     }
 
-                    if (wordLine.contains("ÍNDICE GENERAL") || wordLine.contains("Índice General") || wordLine.contains("Índice general")) {
+                    if (wordLine.contains("ÍNDICE GENERAL") || wordLine.contains("Índice general") || wordLine.contains("Índice general")) {
                         comments = new GeneralIndexFormat(words.get(0),12,"Centrado",true,false,true,0).getFormatErrors(pageWidth);
                         reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
                         continue;

@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.FormatErrors.HighlightsReport;
+package com.ucbcba.joel.ucbcorreccionformato.formatErrors.HighlightsReport;
 
 import java.util.List;
 

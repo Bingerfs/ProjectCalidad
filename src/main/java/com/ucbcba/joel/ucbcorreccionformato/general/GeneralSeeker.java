@@ -1,6 +1,6 @@
-package com.ucbcba.joel.ucbcorreccionformato.General;
+package com.ucbcba.joel.ucbcorreccionformato.general;
 
-import com.ucbcba.joel.ucbcorreccionformato.FormatErrors.ImagesOnPdf.PdfImage;
+import com.ucbcba.joel.ucbcorreccionformato.formatErrors.ImagesOnPdf.PdfImage;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.pdfbox.text.TextPosition;

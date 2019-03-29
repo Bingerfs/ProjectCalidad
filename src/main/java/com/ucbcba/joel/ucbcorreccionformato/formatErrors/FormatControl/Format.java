@@ -1,7 +1,7 @@
-package com.ucbcba.joel.ucbcorreccionformato.FormatErrors.FormatControl;
+package com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatControl;
 
 
-import com.ucbcba.joel.ucbcorreccionformato.General.WordsProperties;
+import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;
 
 import java.util.ArrayList;
 import java.util.List;

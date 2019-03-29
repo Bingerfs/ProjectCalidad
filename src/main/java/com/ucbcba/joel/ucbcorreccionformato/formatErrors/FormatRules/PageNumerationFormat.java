@@ -1,10 +1,10 @@
-package com.ucbcba.joel.ucbcorreccionformato.FormatErrors.FormatRules;
+package com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatRules;
 
-import com.ucbcba.joel.ucbcorreccionformato.FormatErrors.FormatControl.PageFormat;
-import com.ucbcba.joel.ucbcorreccionformato.FormatErrors.HighlightsReport.FormatErrorReport;
-import com.ucbcba.joel.ucbcorreccionformato.General.GeneralSeeker;
-import com.ucbcba.joel.ucbcorreccionformato.General.ReportFormatError;
-import com.ucbcba.joel.ucbcorreccionformato.General.WordsProperties;
+import com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatControl.PageFormat;
+import com.ucbcba.joel.ucbcorreccionformato.formatErrors.HighlightsReport.FormatErrorReport;
+import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
+import com.ucbcba.joel.ucbcorreccionformato.general.ReportFormatError;
+import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;
 import org.apache.pdfbox.pdmodel.PDDocument;
 
 import java.io.IOException;

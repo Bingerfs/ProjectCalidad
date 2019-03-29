@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.FormatErrors.ImagesOnPdf;
+package com.ucbcba.joel.ucbcorreccionformato.formatErrors.ImagesOnPdf;
 
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 import org.apache.pdfbox.util.Matrix;

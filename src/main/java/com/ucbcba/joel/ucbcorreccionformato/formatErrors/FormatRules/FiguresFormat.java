@@ -1,13 +1,13 @@
-package com.ucbcba.joel.ucbcorreccionformato.FormatErrors.FormatRules;
+package com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatRules;
 
-import com.ucbcba.joel.ucbcorreccionformato.FormatErrors.FormatControl.FigureNumerationFormat;
-import com.ucbcba.joel.ucbcorreccionformato.FormatErrors.FormatControl.Format;
-import com.ucbcba.joel.ucbcorreccionformato.FormatErrors.HighlightsReport.*;
-import com.ucbcba.joel.ucbcorreccionformato.FormatErrors.ImagesOnPdf.ImageLocations;
-import com.ucbcba.joel.ucbcorreccionformato.FormatErrors.ImagesOnPdf.PdfImage;
-import com.ucbcba.joel.ucbcorreccionformato.General.GeneralSeeker;
-import com.ucbcba.joel.ucbcorreccionformato.General.ReportFormatError;
-import com.ucbcba.joel.ucbcorreccionformato.General.WordsProperties;
+import com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatControl.FigureNumerationFormat;
+import com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatControl.Format;
+import com.ucbcba.joel.ucbcorreccionformato.formatErrors.HighlightsReport.*;
+import com.ucbcba.joel.ucbcorreccionformato.formatErrors.ImagesOnPdf.ImageLocations;
+import com.ucbcba.joel.ucbcorreccionformato.formatErrors.ImagesOnPdf.PdfImage;
+import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
+import com.ucbcba.joel.ucbcorreccionformato.general.ReportFormatError;
+import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;
 import org.apache.pdfbox.contentstream.operator.Operator;
 import org.apache.pdfbox.cos.COSBase;
 import org.apache.pdfbox.cos.COSName;

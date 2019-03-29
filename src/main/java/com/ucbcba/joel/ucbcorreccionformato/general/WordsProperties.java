@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.General;
+package com.ucbcba.joel.ucbcorreccionformato.general;
 
 import org.apache.pdfbox.text.TextPosition;
 
