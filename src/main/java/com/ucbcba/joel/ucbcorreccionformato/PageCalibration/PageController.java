@@ -3,6 +3,7 @@ package com.ucbcba.joel.ucbcorreccionformato.PageCalibration;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
@@ -12,7 +13,7 @@ import java.util.List;
 
 @RestController
 public class PageController {
-    @RequestMapping("/api/getPages/{fileName:.+}")
+    @RequestMapping(value = "/api/getPages/{fileName:.+}", method = RequestMethod.GET)
     public List<String> getPages(@PathVariable String fileName)  {
         List<String> pages = new ArrayList<>();
         String dirPdfFile = "uploads/" + fileName;

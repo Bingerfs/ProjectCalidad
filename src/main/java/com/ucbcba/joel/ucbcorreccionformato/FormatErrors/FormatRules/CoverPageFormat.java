@@ -26,6 +26,53 @@ public class CoverPageFormat implements FormatRule {
         this.counter = counter;
     }
 
+    List<String> generateComments(List<WordsProperties> words, int fontSize, String alignment, Boolean isBold, Boolean isItalic, Boolean allUppercase, float pageWidth){
+        List<String> comments;
+        comments=new CoverFormat(words.get(0), fontSize, alignment, isBold, isItalic, allUppercase).getFormatErrors(pageWidth);
+        return comments;
+    }
+
+    public void verifyLine(int line, List<WordsProperties> words, List<FormatErrorReport> formatErrors, float pageWidth, float pageHeight, int page, int numberOfLines){
+        List<String> comments= new ArrayList<>();
+        if (line == 1) {
+            generateComments( words, 18, "Centrado", true, false, true, pageWidth);
+            reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
+        }
+        if (line == 2) {
+            generateComments( words, 16, "Centrado", true, false, true, pageWidth);
+            reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
+        }
+        if (line == 3 || line == 4) {
+            generateComments(words, 14, "Centrado", true, false, false, pageWidth);
+            reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
+        }
+
+        if (line == 5) {
+            generateComments(words, 16, "Centrado", true, false, false, pageWidth);
+            reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
+        }
+
+        if (line > 5 && line <= numberOfLines - 4) {
+            generateComments(words, 16, "Centrado", true, false, false, pageWidth);
+            reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
+        }
+
+        if (line == numberOfLines - 3) {
+            generateComments(words, 12, "Derecho", false, true, false, pageWidth);
+            reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
+        }
+
+        if (line == numberOfLines - 2) {
+            generateComments(words, 14, "Centrado", true, false, false, pageWidth);
+            reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
+        }
+
+        if (line == numberOfLines || line == numberOfLines - 1) {
+            generateComments(words, 12, "Centrado", false, false, false, pageWidth);
+            reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
+        }
+    }
+
     @Override
     public List<FormatErrorReport> getFormatErrors(int page) throws IOException {
         float pageWidth = pdfdocument.getPage(page-1).getMediaBox().getWidth();
@@ -46,47 +93,8 @@ public class CoverPageFormat implements FormatRule {
             if (!arr[0].equals("")) {
                 String wordLine = line.trim();
                 List<WordsProperties> words = seeker.findWordsFromAPage(page, wordLine);
-                if (words.size()!=0) {
-                    List<String> comments = new ArrayList<>();
-                    if (cont == 1) {
-                        comments = new CoverFormat(words.get(0), 18, "Centrado", true, false, true).getFormatErrors(pageWidth);
-                        reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
-                    }
-                    if (cont == 2) {
-                        comments = new CoverFormat(words.get(0), 16, "Centrado", true, false, true).getFormatErrors(pageWidth);
-                        reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
-                    }
-                    if (cont == 3 || cont == 4) {
-                        comments = new CoverFormat(words.get(0), 14, "Centrado", true, false, false).getFormatErrors(pageWidth);
-                        reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
-                    }
-
-                    if (cont == 5) {
-                        comments = new CoverFormat(words.get(0), 16, "Centrado", true, false, false).getFormatErrors(pageWidth);
-                        reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
-                    }
-
-                    if (cont > 5 && cont <= numberOfLines - 4) {
-                        comments = new CoverFormat(words.get(0), 16, "Centrado", true, false, false).getFormatErrors(pageWidth);
-                        reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
-                    }
-
-                    if (cont == numberOfLines - 3) {
-                        comments = new CoverFormat(words.get(0), 12, "Derecho", false, true, false).getFormatErrors(pageWidth);
-                        reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
-                    }
-
-                    if (cont == numberOfLines - 2) {
-                        comments = new CoverFormat(words.get(0), 14, "Centrado", true, false, false).getFormatErrors(pageWidth);
-                        reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
-                    }
-
-                    if (cont == numberOfLines || cont == numberOfLines - 1) {
-                        comments = new CoverFormat(words.get(0), 12, "Centrado", false, false, false).getFormatErrors(pageWidth);
-                        reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
-                    }
-                }
-
+                if (!words.isEmpty())
+                    verifyLine(cont, words, formatErrors, pageWidth, pageHeight, page, numberOfLines);
                 cont++;
             }
         }
