@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.PageCalibration;
+package com.ucbcba.joel.ucbcorreccionformato.pageCalibration;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.springframework.web.bind.annotation.PathVariable;
