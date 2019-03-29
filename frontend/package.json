@@ -13,7 +13,6 @@
     "start": "nwb serve-react-demo",
     "test": "npm run flow",
     "flow": "flow",
-    "precommit": "npm run flow",
     "deploy": "npm run build && gh-pages --dist ./demo/dist --branch gh-pages",
     "prepublishOnly": "npm run build && npm run copy-files",
     "prettier": "prettier --write 'src/**/*.js' 'demo/src/**/*.js'"
