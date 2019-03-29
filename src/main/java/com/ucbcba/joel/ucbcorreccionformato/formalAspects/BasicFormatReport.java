@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.FormalAspects;
+package com.ucbcba.joel.ucbcorreccionformato.formalAspects;
 
 public class BasicFormatReport {
     private String format;
