@@ -1,7 +1,7 @@
-package com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatRules;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors.FormatRules;
 
-import com.ucbcba.joel.ucbcorreccionformato.formatErrors.bibliographies.PatternBibliographyReferences;
-import com.ucbcba.joel.ucbcorreccionformato.formatErrors.HighlightsReport.*;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.bibliographies.PatternBibliographyReferences;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.HighlightsReport.*;
 import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
 import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;
 import org.apache.pdfbox.pdmodel.PDDocument;

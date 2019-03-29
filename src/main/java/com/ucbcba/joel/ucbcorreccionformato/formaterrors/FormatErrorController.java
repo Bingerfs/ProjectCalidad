@@ -1,6 +1,6 @@
-package com.ucbcba.joel.ucbcorreccionformato.formatErrors;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors;
 
-import com.ucbcba.joel.ucbcorreccionformato.formatErrors.HighlightsReport.FormatErrorReport;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.HighlightsReport.FormatErrorReport;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.springframework.web.bind.annotation.*;
 

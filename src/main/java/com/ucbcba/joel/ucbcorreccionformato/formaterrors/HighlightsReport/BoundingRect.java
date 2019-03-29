@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.formatErrors.HighlightsReport;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors.HighlightsReport;
 
 public class BoundingRect {
     private float x1;

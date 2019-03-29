@@ -1,7 +1,7 @@
-package com.ucbcba.joel.ucbcorreccionformato.formatErrors.FormatRules;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors.FormatRules;
 
-import com.ucbcba.joel.ucbcorreccionformato.formatErrors.formatControl.GeneralIndexFormat;
-import com.ucbcba.joel.ucbcorreccionformato.formatErrors.HighlightsReport.FormatErrorReport;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatControl.GeneralIndexFormat;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.HighlightsReport.FormatErrorReport;
 import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
 import com.ucbcba.joel.ucbcorreccionformato.general.ReportFormatError;
 import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;

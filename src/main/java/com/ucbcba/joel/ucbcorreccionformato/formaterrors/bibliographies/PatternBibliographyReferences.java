@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.formatErrors.bibliographies;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors.bibliographies;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
