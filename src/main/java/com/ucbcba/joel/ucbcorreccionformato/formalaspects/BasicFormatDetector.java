@@ -83,7 +83,7 @@ public class BasicFormatDetector {
                 }
                 else {
                     List<WordsProperties> words = seeker.findWordsFromAPage( page,wordLine);
-                    if (words.size() != 0){
+                    if (this.isDifferentZero(words)){
                         if (words.get(words.size()-1).getY() > 720) {
                             isCorrectNumeration = true;
                         }
@@ -107,6 +107,11 @@ public class BasicFormatDetector {
     }
 
     public boolean isZero(List<WordsProperties> words){
-        return words.size() == 0;
+        int size = words.size();
+        return size == 0;
+    }
+    public boolean isDifferentZero(List<WordsProperties> words){
+        int size = words.size();
+        return size != 0;
     }
 }
