@@ -1,8 +1,5 @@
 package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
-
-
-
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatcontrol.CoverFormat;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport.FormatErrorReport;
 import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
@@ -17,13 +14,12 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 
-
-
 public class CoverPageFormat implements FormatRule {
 
     private PDDocument pdfdocument;
     private GeneralSeeker seeker;
     private AtomicLong counter;
+
 
     private String align = "Centrado";
 
@@ -33,6 +29,7 @@ public class CoverPageFormat implements FormatRule {
         this.seeker = new GeneralSeeker(pdfdocument);
         this.counter = counter;
     }
+
 
     List<String> generateComments(List<WordsProperties> words, int fontSize, String alignment, Boolean isBold, Boolean isItalic, Boolean allUppercase, float pageWidth){
         List<String> comments;
@@ -96,6 +93,7 @@ public class CoverPageFormat implements FormatRule {
         pdfStripper.setEndPage(page);
         pdfStripper.setParagraphStart("\n");
         pdfStripper.setSortByPosition(true);
+
         //Recorre la página linea por linea
         for (String line : pdfStripper.getText(pdfdocument).split(pdfStripper.getParagraphStart())) {
 
@@ -133,6 +131,7 @@ public class CoverPageFormat implements FormatRule {
     }
 
     private void reportFormatErrors(List<String> comments, List<WordsProperties> words, List<FormatErrorReport> formatErrors, float pageWidth, float pageHeight, int page) {
+
 
         if (!comments.isEmpty()) {
             formatErrors.add(new ReportFormatError(counter).reportFormatError(comments, words.get(0), pageWidth, pageHeight, page));

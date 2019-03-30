@@ -2,7 +2,6 @@ package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatcontrol.FigureNumerationFormat;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatcontrol.Format;
-
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport.*;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.imagesonpdf.ImageLocations;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.imagesonpdf.PdfImage;
@@ -47,6 +46,7 @@ public class FiguresFormat implements FormatRule {
         float pageHeight = pdfdocument.getPage(pageNum-1).getMediaBox().getHeight();
         List<FormatErrorReport> formatErrors = new ArrayList<>();
 
+
         final List<PdfImage> pdfImages = new ArrayList<>();
 
         ImageLocations imageLocations = new ImageLocations(){
@@ -79,6 +79,7 @@ public class FiguresFormat implements FormatRule {
         imageLocations.processPage(page);
 
 
+
         List<String> comments;
         if (pdfImages.size()<4) {
             // Sorting
@@ -101,6 +102,7 @@ public class FiguresFormat implements FormatRule {
                 } else {
                     commentsFigure.add("Tenga la fuente de la figura");
                 }
+
 
 
                 if (!commentsFigure.isEmpty()) {
@@ -133,6 +135,7 @@ public class FiguresFormat implements FormatRule {
     }
 
     private void reportFormatErrors(List<String> comments, WordsProperties words, List<FormatErrorReport> formatErrors, float pageWidth, float pageHeigh, int page) {
+
 
         if (!comments.isEmpty()) {
             formatErrors.add(new ReportFormatError(counter).reportFormatError(comments, words, pageWidth, pageHeigh, page));

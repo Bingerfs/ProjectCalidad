@@ -1,6 +1,5 @@
 package com.ucbcba.joel.ucbcorreccionformato.formaterrors;
 
-
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsReport.FormatErrorReport;
 
 import org.apache.pdfbox.pdmodel.PDDocument;

@@ -57,6 +57,7 @@ public class BasicFormatDetector {
         pdfStripper.setParagraphStart("\n");
         pdfStripper.setSortByPosition(true);
         for (String line : pdfStripper.getText(pdfdocument).split(pdfStripper.getParagraphStart())) {
+
             String[] arr = line.split(" ", 2);
 
             if (!arr[0].equals("")) {
@@ -65,6 +66,7 @@ public class BasicFormatDetector {
                 if (wordLine.length() - wordLine.replaceAll(" ", "").length() >= 1) {
                     List<WordsProperties> words = seeker.findWordsFromAPage(page,wordLine);
                     // En caso que no se encuentre la linea del PDF la vuelve a buscar normalizandola
+
 
                     if (this.isZero(words)) {
                         wordLine = Normalizer.normalize(wordLine, Normalizer.Form.NFD);
@@ -86,6 +88,7 @@ public class BasicFormatDetector {
                 }
                 else {
                     List<WordsProperties> words = seeker.findWordsFromAPage( page,wordLine);
+
 
                     if (this.isDifferentZero(words)){
 
@@ -110,6 +113,7 @@ public class BasicFormatDetector {
     public void setBasicFormatReports(List<BasicFormatReport> basicFormatReports) {
         this.basicFormatReports = basicFormatReports;
     }
+
 
     public boolean isZero(List<WordsProperties> words){
         int size = words.size();

@@ -1,7 +1,6 @@
 package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatcontrol.GeneralIndexFormat;
-
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport.FormatErrorReport;
 import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
 import com.ucbcba.joel.ucbcorreccionformato.general.ReportFormatError;
@@ -41,17 +40,18 @@ public class GeneralIndexPageFormat implements FormatRule {
         pdfStripper.setEndPage(page);
         pdfStripper.setParagraphStart("\n");
         pdfStripper.setSortByPosition(true);
-        //Recorre la página linea por linea
+
+
         for (String line : pdfStripper.getText(pdfdocument).split(pdfStripper.getParagraphStart())) {
             String arr[] = line.split(" ", 2);
-            // Condicional si encuentra una linea en blanco
+
             if (!arr[0].equals("")) {
                 String wordLine = line.trim();
-                //Condicional paara evitar el control en la paginación
+
                 if (wordLine.length() - wordLine.replaceAll(" ", "").length() >= 1) {
                     List<WordsProperties> words = seeker.findWordsFromAPage(page, wordLine);
-
                     List<String> comments;
+
                     if (words.isEmpty()) {
                         wordLine = Normalizer.normalize(wordLine, Normalizer.Form.NFD);
                         wordLine = wordLine.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
@@ -67,6 +67,7 @@ public class GeneralIndexPageFormat implements FormatRule {
                         continue;
                     }
                     int numberOfPoints = countChar(arr[0], '.');
+
                     if (numberOfPoints == 0) {
                         if (!arr[0].equals("Anexo") && !arr[0].equals("ANEXO")) {
 
@@ -78,12 +79,14 @@ public class GeneralIndexPageFormat implements FormatRule {
 
                     if (numberOfPoints == 1) {
 
+
                         comments = new GeneralIndexFormat(words.get(0),12,ALIGN_IZQ,true,false,true,0).getFormatErrors(pageWidth);
 
                         reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
                         continue;
                     }
                     if (numberOfPoints == 2) {
+
 
                         comments = new GeneralIndexFormat(words.get(0),12,ALIGN_IZQ,true,false,false,1).getFormatErrors(pageWidth);
 
@@ -92,12 +95,14 @@ public class GeneralIndexPageFormat implements FormatRule {
                     }
                     if (numberOfPoints == 3) {
 
+
                         comments = new GeneralIndexFormat(words.get(0),12,ALIGN_IZQ,true,true,false,2).getFormatErrors(pageWidth);
 
                         reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
                         continue;
                     }
                     if (numberOfPoints == 4) {
+
 
                         comments = new GeneralIndexFormat(words.get(0),12,ALIGN_IZQ,false,true,false,3).getFormatErrors(pageWidth);
                         reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
@@ -111,8 +116,8 @@ public class GeneralIndexPageFormat implements FormatRule {
 
     private void reportFormatErrors(List<String> comments, List<WordsProperties> words, List<FormatErrorReport> formatErrors, float pageWidth, float pageHeight, int page) {
 
-        if (!comments.isEmpty()) {
 
+        if (!comments.isEmpty()) {
             formatErrors.add(new ReportFormatError(counter).reportFormatError(comments, words.get(0), pageWidth, pageHeight, page));
         }
     }
