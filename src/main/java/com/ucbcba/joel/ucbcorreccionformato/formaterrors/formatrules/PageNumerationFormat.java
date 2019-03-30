@@ -1,6 +1,7 @@
 package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatcontrol.PageFormat;
+
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport.FormatErrorReport;
 import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
 import com.ucbcba.joel.ucbcorreccionformato.general.ReportFormatError;
@@ -44,6 +45,7 @@ public class PageNumerationFormat implements FormatRule {
     }
 
     private void reportFormatErrors(List<String> comments, List<WordsProperties> words, List<FormatErrorReport> formatErrors, float pageWidth, float pageHeight, int page) {
+
         if (!comments.isEmpty()) {
             formatErrors.add(new ReportFormatError(counter).reportFormatError(comments, words.get(words.size()-1), pageWidth, pageHeight, page));
         }

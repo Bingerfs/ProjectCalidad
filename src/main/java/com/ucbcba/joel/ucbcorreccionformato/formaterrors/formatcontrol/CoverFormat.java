@@ -14,7 +14,9 @@ public class CoverFormat  extends  Format{
 
     @Override
     public List<String> getFormatErrors(float pageWidth){
-        List<String> comments = super.getFormatErrors(pageWidth);;
+
+        List<String> comments = super.getFormatErrors(pageWidth);
+
         if (isAllUpperCase) {
             if (!Character.isUpperCase(word.charAt(1))) {
                 comments.add("Todo en mayúscula");

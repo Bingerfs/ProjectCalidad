@@ -1,5 +1,6 @@
 package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
+
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport.FormatErrorReport;
 
 import java.io.IOException;

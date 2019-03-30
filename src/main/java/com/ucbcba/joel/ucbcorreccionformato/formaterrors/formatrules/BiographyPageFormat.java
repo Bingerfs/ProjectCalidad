@@ -1,9 +1,10 @@
 package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
 
-
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.bibliographies.PatternBibliographyReferences;
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport.*;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsReport.*;
+
+
 import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
 import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -46,7 +47,7 @@ public class BiographyPageFormat implements  FormatRule {
             // Condicional si encuentra una linea en blanco
             if (!arr[0].equals("")) {
                 String wordLine = line.trim();
-                if (!wordLine.contains("BIBLIOGRAFÍA") && !wordLine.contains("Bibliografía") && !wordLine.contains("BIBLIOGRAFÍA")) {
+                if (!wordLine.contains("BIBLIOGRAFÍA") && !wordLine.contains("Bibliografía") && !wordLine.contains("BIBLIOGRAFÍA")) {
                     //Condicional paara evitar el control en la paginación
                     if ((wordLine.length() - wordLine.replaceAll(" ", "").length() >= 1) || wordLine.length() > 4) {
                         if (wordLine.charAt(0) == '[') {
@@ -145,6 +146,7 @@ public class BiographyPageFormat implements  FormatRule {
         Pattern email_bibliography = Pattern.compile("[^(]+\\([^)]+\\)[^(]*\\([^)]+\\)\\.[^“]*“[^”]+”\\.[^(]*\\([^)]+\\)[^(]*\\(fecha del mensaje.+", Pattern.CASE_INSENSITIVE);
         PatternBibliographyReferences email = new PatternBibliographyReferences("Correo electrónico",email_bibliography);
 
+
         Pattern radioBibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^(]*\\([^)]+\\).+", Pattern.CASE_INSENSITIVE);
         PatternBibliographyReferences radio = new PatternBibliographyReferences("Programa de radio ",radioBibliography);
 
@@ -173,6 +175,7 @@ public class BiographyPageFormat implements  FormatRule {
         PatternBibliographyReferences book = new PatternBibliographyReferences("Libro",bookBibliography);
 
 
+
         if (lineWord.contains("http")){
             if( lineWord.contains("@")){
                 return discussion_list;
@@ -190,7 +193,9 @@ public class BiographyPageFormat implements  FormatRule {
         }
 
         if (lineWord.contains("CD-ROM") || lineWord.contains("DVD")){
+
             return cdRomDvd;
+
         }
 
         if (lineWord.contains("licenciatura") || lineWord.contains("Licenciatura") || lineWord.contains("titulación") || lineWord.contains("Titulación")){
@@ -199,6 +204,7 @@ public class BiographyPageFormat implements  FormatRule {
 
         if (lineWord.contains("En:")){
             if( lineWord.contains("N°") || lineWord.contains(", Año")){
+
                 return articleMagazine;
             }
             Matcher matcher = chapterBookBibliography.matcher(lineWord);

@@ -2,6 +2,7 @@ package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
 
 
+
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatcontrol.CoverFormat;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport.FormatErrorReport;
 import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
@@ -17,12 +18,15 @@ import java.util.concurrent.atomic.AtomicLong;
 
 
 
+
 public class CoverPageFormat implements FormatRule {
 
     private PDDocument pdfdocument;
     private GeneralSeeker seeker;
     private AtomicLong counter;
+
     private String align = "Centrado";
+
 
     public CoverPageFormat(PDDocument pdfdocument, AtomicLong counter){
         this.pdfdocument = pdfdocument;
@@ -94,11 +98,13 @@ public class CoverPageFormat implements FormatRule {
         pdfStripper.setSortByPosition(true);
         //Recorre la página linea por linea
         for (String line : pdfStripper.getText(pdfdocument).split(pdfStripper.getParagraphStart())) {
+
             String[] arr = line.split(" ", 2);
             // Condicional si encuentra una linea en blanco
             if (!arr[0].equals("")) {
                 String wordLine = line.trim();
                 List<WordsProperties> words = seeker.findWordsFromAPage(page, wordLine);
+
                 if (!words.isEmpty())
                     verifyLine(cont, words, formatErrors, pageWidth, pageHeight, page, numberOfLines);
                 cont++;
@@ -116,7 +122,9 @@ public class CoverPageFormat implements FormatRule {
         pdfStripper.setParagraphStart("\n");
         pdfStripper.setSortByPosition(true);
         for (String line : pdfStripper.getText(pdfdocument).split(pdfStripper.getParagraphStart())) {
+
             String[] arr = line.split(" ", 2);
+
             if (!arr[0].equals("")) {
                 cont++;
             }
@@ -125,6 +133,7 @@ public class CoverPageFormat implements FormatRule {
     }
 
     private void reportFormatErrors(List<String> comments, List<WordsProperties> words, List<FormatErrorReport> formatErrors, float pageWidth, float pageHeight, int page) {
+
         if (!comments.isEmpty()) {
             formatErrors.add(new ReportFormatError(counter).reportFormatError(comments, words.get(0), pageWidth, pageHeight, page));
         }
