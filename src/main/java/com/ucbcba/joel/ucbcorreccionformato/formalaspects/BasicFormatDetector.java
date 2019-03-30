@@ -58,17 +58,20 @@ public class BasicFormatDetector {
         pdfStripper.setSortByPosition(true);
         for (String line : pdfStripper.getText(pdfdocument).split(pdfStripper.getParagraphStart())) {
             String[] arr = line.split(" ", 2);
+
             if (!arr[0].equals("")) {
                 String wordLine = line.trim();
                 // En caso que encuentre la numeración de la página
                 if (wordLine.length() - wordLine.replaceAll(" ", "").length() >= 1) {
                     List<WordsProperties> words = seeker.findWordsFromAPage(page,wordLine);
                     // En caso que no se encuentre la linea del PDF la vuelve a buscar normalizandola
+
                     if (this.isZero(words)) {
                         wordLine = Normalizer.normalize(wordLine, Normalizer.Form.NFD);
                         wordLine = wordLine.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
                         words = seeker.findWordsFromAPage(page, wordLine);
                         if (this.isZero(words)) {
+
                             continue;
                         }
                     }
@@ -83,7 +86,9 @@ public class BasicFormatDetector {
                 }
                 else {
                     List<WordsProperties> words = seeker.findWordsFromAPage( page,wordLine);
+
                     if (this.isDifferentZero(words)){
+
                         if (words.get(words.size()-1).getY() > 720) {
                             isCorrectNumeration = true;
                         }
@@ -114,4 +119,5 @@ public class BasicFormatDetector {
         int size = words.size();
         return size != 0;
     }
+
 }

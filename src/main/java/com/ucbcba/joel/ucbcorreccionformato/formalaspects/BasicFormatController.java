@@ -10,7 +10,9 @@ import java.util.List;
 
 @RestController
 public class BasicFormatController {
+
     @GetMapping(path = "/api/basicFormat/{fileName:.+}")
+
     public List<BasicFormatReport> getBasicMisstakes(@PathVariable String fileName, @RequestParam(value="figureTableIndexPageEnd") String figureTableIndexPageEnd
             , @RequestParam(value="annexedPage") String annexedPage) {
         List<BasicFormatReport> basicFormatReports = new ArrayList<>();

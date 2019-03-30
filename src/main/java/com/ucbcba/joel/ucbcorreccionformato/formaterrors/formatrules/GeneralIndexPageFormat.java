@@ -1,7 +1,8 @@
 package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatcontrol.GeneralIndexFormat;
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsReport.FormatErrorReport;
+
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport.FormatErrorReport;
 import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
 import com.ucbcba.joel.ucbcorreccionformato.general.ReportFormatError;
 import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;
@@ -19,6 +20,9 @@ public class GeneralIndexPageFormat implements FormatRule {
     private PDDocument pdfdocument;
     private GeneralSeeker seeker;
     private AtomicLong counter;
+
+    private static final String ALIGN_IZQ="Izquierdo";
+
 
     public GeneralIndexPageFormat(PDDocument pdfdocument, AtomicLong counter) {
         this.pdfdocument = pdfdocument;
@@ -46,12 +50,13 @@ public class GeneralIndexPageFormat implements FormatRule {
                 //Condicional paara evitar el control en la paginación
                 if (wordLine.length() - wordLine.replaceAll(" ", "").length() >= 1) {
                     List<WordsProperties> words = seeker.findWordsFromAPage(page, wordLine);
-                    List<String> comments = new ArrayList<>();
-                    if (words.size() == 0) {
+
+                    List<String> comments;
+                    if (words.isEmpty()) {
                         wordLine = Normalizer.normalize(wordLine, Normalizer.Form.NFD);
                         wordLine = wordLine.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
                         words = seeker.findWordsFromAPage(page, wordLine);
-                        if (words.size() == 0) {
+                        if (words.isEmpty()) {
                             continue;
                         }
                     }
@@ -64,29 +69,37 @@ public class GeneralIndexPageFormat implements FormatRule {
                     int numberOfPoints = countChar(arr[0], '.');
                     if (numberOfPoints == 0) {
                         if (!arr[0].equals("Anexo") && !arr[0].equals("ANEXO")) {
-                            comments = new GeneralIndexFormat(words.get(0),12,"Izquierdo",true,false,true,0).getFormatErrors(pageWidth);
+
+                            comments = new GeneralIndexFormat(words.get(0),12,ALIGN_IZQ,true,false,true,0).getFormatErrors(pageWidth);
                             reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
                         }
                         continue;
                     }
 
                     if (numberOfPoints == 1) {
-                        comments = new GeneralIndexFormat(words.get(0),12,"Izquierdo",true,false,true,0).getFormatErrors(pageWidth);
+
+                        comments = new GeneralIndexFormat(words.get(0),12,ALIGN_IZQ,true,false,true,0).getFormatErrors(pageWidth);
+
                         reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
                         continue;
                     }
                     if (numberOfPoints == 2) {
-                        comments = new GeneralIndexFormat(words.get(0),12,"Izquierdo",true,false,false,1).getFormatErrors(pageWidth);
+
+                        comments = new GeneralIndexFormat(words.get(0),12,ALIGN_IZQ,true,false,false,1).getFormatErrors(pageWidth);
+
                         reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
                         continue;
                     }
                     if (numberOfPoints == 3) {
-                        comments = new GeneralIndexFormat(words.get(0),12,"Izquierdo",true,true,false,2).getFormatErrors(pageWidth);
+
+                        comments = new GeneralIndexFormat(words.get(0),12,ALIGN_IZQ,true,true,false,2).getFormatErrors(pageWidth);
+
                         reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
                         continue;
                     }
                     if (numberOfPoints == 4) {
-                        comments = new GeneralIndexFormat(words.get(0),12,"Izquierdo",false,true,false,3).getFormatErrors(pageWidth);
+
+                        comments = new GeneralIndexFormat(words.get(0),12,ALIGN_IZQ,false,true,false,3).getFormatErrors(pageWidth);
                         reportFormatErrors(comments, words, formatErrors, pageWidth, pageHeight, page);
                     }
                 }
@@ -97,7 +110,9 @@ public class GeneralIndexPageFormat implements FormatRule {
     }
 
     private void reportFormatErrors(List<String> comments, List<WordsProperties> words, List<FormatErrorReport> formatErrors, float pageWidth, float pageHeight, int page) {
-        if (comments.size() != 0) {
+
+        if (!comments.isEmpty()) {
+
             formatErrors.add(new ReportFormatError(counter).reportFormatError(comments, words.get(0), pageWidth, pageHeight, page));
         }
     }
@@ -107,7 +122,8 @@ public class GeneralIndexPageFormat implements FormatRule {
         int count = 0;
         for(int i=0; i < str.length(); i++)
         {    if(str.charAt(i) == c)
-            count++;
+
+                count++;
         }
         return count;
     }

@@ -1,6 +1,8 @@
 package com.ucbcba.joel.ucbcorreccionformato.formaterrors;
 
+
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsReport.FormatErrorReport;
+
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +14,9 @@ import java.util.List;
 @RestController
 public class FormatErrorController {
 
+
     @GetMapping(value = "/api/formatErrors/{fileName:.+}")
+
     public List<FormatErrorReport> greeting(@PathVariable String fileName, @RequestParam(value="coverPage") String coverPage
             , @RequestParam(value="generalIndexPageStart") String generalIndexPageStart, @RequestParam(value="generalIndexPageEnd") String generalIndexPageEnd
             , @RequestParam(value="figureTableIndexPageEnd") String figureTableIndexPageEnd, @RequestParam(value="biographyPage") String biographyPage
