@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.formaterrors.Formatrules;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.FormatControl.FigureNumerationFormat;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.FormatControl.Format;
@@ -78,7 +78,7 @@ public class FiguresFormat implements FormatRule {
 
         List<String> comments = new ArrayList<>();
         if (pdfImages.size()<4) {
-            // Sorting
+
             Collections.sort(pdfImages, new Comparator<PdfImage>() {
                 @Override
                 public int compare(PdfImage pdfImage1, PdfImage pdfImage2)
@@ -104,7 +104,7 @@ public class FiguresFormat implements FormatRule {
                     commentsFigure.add("Tenga la fuente de la figura");
                 }
 
-                if (commentsFigure.size() != 0) {
+                if (commentsFigure.isEmpty()) {
                     StringBuilder commentStr = new StringBuilder();
                     for (int i = 0; i < commentsFigure.size(); i++) {
                         if (i != 0) {
@@ -134,7 +134,7 @@ public class FiguresFormat implements FormatRule {
     }
 
     private void reportFormatErrors(List<String> comments, WordsProperties words, List<FormatErrorReport> formatErrors, float pageWidth, float pageHeigh, int page) {
-        if (comments.size() != 0) {
+        if (comments.isEmpty()) {
             formatErrors.add(new ReportFormatError(counter).reportFormatError(comments, words, pageWidth, pageHeigh, page));
         }
     }

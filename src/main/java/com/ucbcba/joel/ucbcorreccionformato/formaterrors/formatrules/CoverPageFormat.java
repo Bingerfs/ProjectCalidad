@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.formaterrors.Formatrules;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
 
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.FormatControl.CoverFormat;
@@ -39,10 +39,10 @@ public class CoverPageFormat implements FormatRule {
         pdfStripper.setEndPage(page);
         pdfStripper.setParagraphStart("\n");
         pdfStripper.setSortByPosition(true);
-        //Recorre la página linea por linea
+
         for (String line : pdfStripper.getText(pdfdocument).split(pdfStripper.getParagraphStart())) {
             String arr[] = line.split(" ", 2);
-            // Condicional si encuentra una linea en blanco
+
             if (!arr[0].equals("")) {
                 String wordLine = line.trim();
                 List<WordsProperties> words = seeker.findWordsFromAPage(page, wordLine);
