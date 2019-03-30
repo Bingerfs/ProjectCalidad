@@ -140,44 +140,44 @@ public class BiographyPageFormat implements  FormatRule {
         PatternBibliographyReferences discussionList = new PatternBibliographyReferences("Listas de discusión",discussionsBibliographies);
 
         Pattern pageWebBibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^E]*En:[^<]*<[^>]+>[^,]*,[^(]*\\(fecha de consulta.+", Pattern.CASE_INSENSITIVE);
-        PatternBibliographyReferences page_web = new PatternBibliographyReferences("Página web",pageWebBibliography);
+        PatternBibliographyReferences pageWeb = new PatternBibliographyReferences("Página web",pageWebBibliography);
 
-        Pattern email_bibliography = Pattern.compile("[^(]+\\([^)]+\\)[^(]*\\([^)]+\\)\\.[^“]*“[^”]+”\\.[^(]*\\([^)]+\\)[^(]*\\(fecha del mensaje.+", Pattern.CASE_INSENSITIVE);
-        PatternBibliographyReferences email = new PatternBibliographyReferences("Correo electrónico",email_bibliography);
+        Pattern emailBibliography = Pattern.compile("[^(]+\\([^)]+\\)[^(]*\\([^)]+\\)\\.[^“]*“[^”]+”\\.[^(]*\\([^)]+\\)[^(]*\\(fecha del mensaje.+", Pattern.CASE_INSENSITIVE);
+        PatternBibliographyReferences email = new PatternBibliographyReferences("Correo electrónico",emailBibliography);
 
-        Pattern radio_bibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^(]*\\([^)]+\\).+", Pattern.CASE_INSENSITIVE);
-        PatternBibliographyReferences radio = new PatternBibliographyReferences("Programa de radio ",radio_bibliography);
+        Pattern radioBibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^(]*\\([^)]+\\).+", Pattern.CASE_INSENSITIVE);
+        PatternBibliographyReferences radio = new PatternBibliographyReferences("Programa de radio ",radioBibliography);
 
-        Pattern cd_rom_dvd_bibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^:]+:.+", Pattern.CASE_INSENSITIVE);
-        PatternBibliographyReferences cd_rom_dvd = new PatternBibliographyReferences("Libro en soporte CD-ROM/DVD",cd_rom_dvd_bibliography);
+        Pattern cdRomDVDBibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^:]+:.+", Pattern.CASE_INSENSITIVE);
+        PatternBibliographyReferences cdRomDVD = new PatternBibliographyReferences("Libro en soporte CD-ROM/DVD",cdRomDVDBibliography);
 
-        Pattern thesis_bibliography = Pattern.compile("[^(]+\\([^)]+\\)\\..+", Pattern.CASE_INSENSITIVE);
-        PatternBibliographyReferences thesis = new PatternBibliographyReferences("Tesis/Trabajo de titulación",thesis_bibliography);
+        Pattern thesisBibliography = Pattern.compile("[^(]+\\([^)]+\\)\\..+", Pattern.CASE_INSENSITIVE);
+        PatternBibliographyReferences thesis = new PatternBibliographyReferences("Tesis/Trabajo de titulación",thesisBibliography);
 
-        Pattern article_magazine_bibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^E]*En:.+Año.+N.+", Pattern.CASE_INSENSITIVE);
-        PatternBibliographyReferences article_magazine = new PatternBibliographyReferences("Artículo de revista",article_magazine_bibliography);
+        Pattern articleMagazineBibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^E]*En:.+Año.+N.+", Pattern.CASE_INSENSITIVE);
+        PatternBibliographyReferences articleMagazine = new PatternBibliographyReferences("Artículo de revista",articleMagazineBibliography);
 
-        Pattern chapter_book_bibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^E]*En:[^:]+:.+", Pattern.CASE_INSENSITIVE);
-        PatternBibliographyReferences chapter_book = new PatternBibliographyReferences("Capítulo de libro",chapter_book_bibliography);
+        Pattern chapterBookBibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^E]*En:[^:]+:.+", Pattern.CASE_INSENSITIVE);
+        PatternBibliographyReferences chapterBook = new PatternBibliographyReferences("Capítulo de libro",chapterBookBibliography);
 
-        Pattern article_newspaper_bibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^E]*En:[^(]+\\([^)]+\\).+", Pattern.CASE_INSENSITIVE);
-        PatternBibliographyReferences article_newspaper = new PatternBibliographyReferences("Artículo de periódico",article_newspaper_bibliography);
+        Pattern articleNewspaperBibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^E]*En:[^(]+\\([^)]+\\).+", Pattern.CASE_INSENSITIVE);
+        PatternBibliographyReferences articleNewspaper = new PatternBibliographyReferences("Artículo de periódico",articleNewspaperBibliography);
 
-        Pattern conference_artworks_bibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^E]*En:.+", Pattern.CASE_INSENSITIVE);
-        PatternBibliographyReferences conference_artworks = new PatternBibliographyReferences("Congreso/Conferencia",conference_artworks_bibliography);
+        Pattern conferenceArtworksBibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^E]*En:.+", Pattern.CASE_INSENSITIVE);
+        PatternBibliographyReferences conferenceArtworks = new PatternBibliographyReferences("Congreso/Conferencia",conferenceArtworksBibliography);
 
-        Pattern movies_bibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^:]+:.+", Pattern.CASE_INSENSITIVE);
-        PatternBibliographyReferences movies = new PatternBibliographyReferences("Película",movies_bibliography);
+        Pattern moviesBibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^:]+:.+", Pattern.CASE_INSENSITIVE);
+        PatternBibliographyReferences movies = new PatternBibliographyReferences("Película",moviesBibliography);
 
-        Pattern book_bibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^:]+:.+", Pattern.CASE_INSENSITIVE);
-        PatternBibliographyReferences book = new PatternBibliographyReferences("Libro",book_bibliography);
+        Pattern bookBibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^:]+:.+", Pattern.CASE_INSENSITIVE);
+        PatternBibliographyReferences book = new PatternBibliographyReferences("Libro",bookBibliography);
 
 
         if (lineWord.contains("http")){
             if( lineWord.contains("@")){
                 return discussionList;
             }else{
-                return page_web;
+                return pageWeb;
             }
         }
 
@@ -190,7 +190,7 @@ public class BiographyPageFormat implements  FormatRule {
         }
 
         if (lineWord.contains("CD-ROM") || lineWord.contains("DVD")){
-            return cd_rom_dvd;
+            return cdRomDVD;
         }
 
         if (lineWord.contains("licenciatura") || lineWord.contains("Licenciatura") || lineWord.contains("titulación") || lineWord.contains("Titulación")){
@@ -199,19 +199,19 @@ public class BiographyPageFormat implements  FormatRule {
 
         if (lineWord.contains("En:")){
             if( lineWord.contains("N°") || lineWord.contains(", Año")){
-                return article_magazine;
+                return articleMagazine;
             }
-            Matcher matcher = chapter_book_bibliography.matcher(lineWord);
+            Matcher matcher = chapterBookBibliography.matcher(lineWord);
             if (matcher.find()){
-                return chapter_book;
+                return chapterBook;
             }
-            matcher = article_newspaper_bibliography.matcher(lineWord);
+            matcher = articleNewspaperBibliography.matcher(lineWord);
             if (matcher.find()){
-                return article_newspaper;
+                return articleNewspaper;
             }
-            matcher = conference_artworks_bibliography.matcher(lineWord);
+            matcher = conferenceArtworksBibliography.matcher(lineWord);
             if (matcher.find()){
-                return conference_artworks;
+                return conferenceArtworks;
             }
             return null;
         }
