@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.formaterrors.FormatRules;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors.Formatrules;
 
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.Bibliographies.PatternBibliographyReferences;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport.*;
@@ -54,7 +54,7 @@ public class BiographyPageFormat implements  FormatRule {
                             }
                             if(bibliographic.length()!=0){
                                 List<String> comments = new ArrayList<>();
-                                PatternBibliographyReferences pattern = getPattern(bibliographic.toString());
+                                PatternBibliographyReferences pattern = getpattern(bibliographic.toString());
                                 if (pattern!=null) {
                                     Matcher matcher = pattern.getMatcher(bibliographic.toString());
                                     if (!matcher.find()) {
@@ -80,7 +80,7 @@ public class BiographyPageFormat implements  FormatRule {
         }
         if(bibliographic.length()!=0){
             List<String> comments = new ArrayList<>();
-            PatternBibliographyReferences pattern = getPattern(bibliographic.toString());
+            PatternBibliographyReferences pattern = getpattern(bibliographic.toString());
             if (pattern!=null) {
                 Matcher matcher = pattern.getMatcher(bibliographic.toString());
                 if (!matcher.find()) {
@@ -133,7 +133,7 @@ public class BiographyPageFormat implements  FormatRule {
     }
 
 
-    public PatternBibliographyReferences getPattern(String lineWord){
+    public PatternBibliographyReferences getpattern(String lineWord){
 
         Pattern compile = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^<]*<[^>]+>[^<]*<[^>]+>[^(]*\\(fecha de consulta.+", Pattern.CASE_INSENSITIVE);
         Pattern discussionsBibliographies = compile;

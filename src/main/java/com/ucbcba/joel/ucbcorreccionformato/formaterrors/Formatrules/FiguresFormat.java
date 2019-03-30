@@ -1,10 +1,10 @@
-package com.ucbcba.joel.ucbcorreccionformato.formaterrors.FormatRules;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors.Formatrules;
 
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.FormatControl.FigureNumerationFormat;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.FormatControl.Format;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport.*;
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.ImagesOnPdf.ImageLocations;
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.ImagesOnPdf.PdfImage;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.imagesonpdf.ImageLocations;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.imagesonpdf.PdfImage;
 import com.ucbcba.joel.ucbcorreccionformato.General.GeneralSeeker;
 import com.ucbcba.joel.ucbcorreccionformato.General.ReportFormatError;
 import com.ucbcba.joel.ucbcorreccionformato.General.WordsProperties;

@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.formaterrors.FormatRules;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors.Formatrules;
 
 
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.FormatControl.CoverFormat;
