@@ -1,7 +1,7 @@
 package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatControl.FigureNumerationFormat;
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatControl.Format;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatcontrol.FigureNumerationFormat;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatcontrol.Format;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsReport.*;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.imagesonpdf.ImageLocations;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.imagesonpdf.PdfImage;

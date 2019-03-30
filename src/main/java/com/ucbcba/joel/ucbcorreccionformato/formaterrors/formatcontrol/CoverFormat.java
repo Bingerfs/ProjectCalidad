@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatControl;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatcontrol;
 
 import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;
 
@@ -14,7 +14,7 @@ public class CoverFormat  extends  Format{
 
     @Override
     public List<String> getFormatErrors(float pageWidth){
-        List<String> comments = super.getFormatErrors(pageWidth);;
+        List<String> comments = super.getFormatErrors(pageWidth);
         if (isAllUpperCase) {
             if (!Character.isUpperCase(word.charAt(1))) {
                 comments.add("Todo en mayúscula");

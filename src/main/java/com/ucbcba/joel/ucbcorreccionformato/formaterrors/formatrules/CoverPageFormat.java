@@ -1,7 +1,7 @@
 package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
 
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatControl.CoverFormat;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatcontrol.CoverFormat;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsReport.FormatErrorReport;
 import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
 import com.ucbcba.joel.ucbcorreccionformato.general.ReportFormatError;
