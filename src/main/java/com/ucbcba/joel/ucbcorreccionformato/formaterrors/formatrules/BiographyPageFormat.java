@@ -1,9 +1,9 @@
 package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.Bibliographies.PatternBibliographyReferences;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.bibliographies.PatternBibliographyReferences;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport.*;
-import com.ucbcba.joel.ucbcorreccionformato.General.GeneralSeeker;
-import com.ucbcba.joel.ucbcorreccionformato.General.WordsProperties;
+import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
+import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 

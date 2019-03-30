@@ -1,13 +1,13 @@
 package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.FormatControl.FigureNumerationFormat;
-import com.ucbcba.joel.ucbcorreccionformato.formaterrors.FormatControl.Format;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatcontrol.FigureNumerationFormat;
+import com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatcontrol.Format;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport.*;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.imagesonpdf.ImageLocations;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.imagesonpdf.PdfImage;
-import com.ucbcba.joel.ucbcorreccionformato.General.GeneralSeeker;
-import com.ucbcba.joel.ucbcorreccionformato.General.ReportFormatError;
-import com.ucbcba.joel.ucbcorreccionformato.General.WordsProperties;
+import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
+import com.ucbcba.joel.ucbcorreccionformato.general.ReportFormatError;
+import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;
 import org.apache.pdfbox.contentstream.operator.Operator;
 import org.apache.pdfbox.cos.COSBase;
 import org.apache.pdfbox.cos.COSName;
