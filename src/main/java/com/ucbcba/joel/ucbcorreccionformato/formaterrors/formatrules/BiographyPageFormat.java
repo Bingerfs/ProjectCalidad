@@ -1,7 +1,10 @@
 package com.ucbcba.joel.ucbcorreccionformato.formaterrors.formatrules;
 
+
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.bibliographies.PatternBibliographyReferences;
 import com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport.*;
+
+
 import com.ucbcba.joel.ucbcorreccionformato.general.GeneralSeeker;
 import com.ucbcba.joel.ucbcorreccionformato.general.WordsProperties;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -44,7 +47,9 @@ public class BiographyPageFormat implements  FormatRule {
             // Condicional si encuentra una linea en blanco
             if (!arr[0].equals("")) {
                 String wordLine = line.trim();
-                if (!wordLine.contains("BIBLIOGRAFÍA") && !wordLine.contains("Bibliografía") && !wordLine.contains("BIBLIOGRAFÍA")) {
+
+                if (!wordLine.contains("BIBLIOGRAFÍA") && !wordLine.contains("Bibliografía") && !wordLine.contains("BIBLIOGRAFÍA")) {
+
                     //Condicional paara evitar el control en la paginación
                     if ((wordLine.length() - wordLine.replaceAll(" ", "").length() >= 1) || wordLine.length() > 4) {
                         if (wordLine.charAt(0) == '[') {
@@ -54,7 +59,8 @@ public class BiographyPageFormat implements  FormatRule {
                             }
                             if(bibliographic.length()!=0){
                                 List<String> comments = new ArrayList<>();
-                                PatternBibliographyReferences pattern = getpattern(bibliographic.toString());
+
+                                PatternBibliographyReferences pattern = getPattern(bibliographic.toString());
                                 if (pattern!=null) {
                                     Matcher matcher = pattern.getMatcher(bibliographic.toString());
                                     if (!matcher.find()) {
@@ -80,7 +86,8 @@ public class BiographyPageFormat implements  FormatRule {
         }
         if(bibliographic.length()!=0){
             List<String> comments = new ArrayList<>();
-            PatternBibliographyReferences pattern = getpattern(bibliographic.toString());
+
+            PatternBibliographyReferences pattern = getPattern(bibliographic.toString());
             if (pattern!=null) {
                 Matcher matcher = pattern.getMatcher(bibliographic.toString());
                 if (!matcher.find()) {
@@ -102,13 +109,17 @@ public class BiographyPageFormat implements  FormatRule {
             for (int i = 0;i<ref_bibliografy.size();i++){
                 String lineWord = ref_bibliografy.get(i);
                 List<WordsProperties> lineWordWithProperties = seeker.findWordsFromAPage(page,lineWord);
+
                 int linewordwithpropertiessize = lineWordWithProperties.size();
                 if (linewordwithpropertiessize == 0) {
+
                     lineWord = Normalizer.normalize(lineWord, Normalizer.Form.NFD);
                     lineWord = lineWord.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
                     lineWordWithProperties = seeker.findWordsFromAPage(page, lineWord);
                 }
+
                 if (linewordwithpropertiessize !=0){
+
                     WordsProperties word = lineWordWithProperties.get(0);
                     BoundingRect boundingRect = new BoundingRect(word.getX(), word.getYPlusHeight(), word.getXPlusWidth(),word.getY(),pageWidth,pageHeight);
                     boundingRects.add(boundingRect);
@@ -133,6 +144,7 @@ public class BiographyPageFormat implements  FormatRule {
     }
 
 
+
     public PatternBibliographyReferences getpattern(String lineWord){
 
         Pattern compile = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^“]*“[^”]+”\\.[^<]*<[^>]+>[^<]*<[^>]+>[^(]*\\(fecha de consulta.+", Pattern.CASE_INSENSITIVE);
@@ -150,6 +162,7 @@ public class BiographyPageFormat implements  FormatRule {
 
         Pattern cdRomDVDBibliography = Pattern.compile("([^(]+\\([^)]+\\)\\.|[^(]+\\([dir.compe]+\\)[^(]*\\([^)]+\\)\\.)[^:]+:.+", Pattern.CASE_INSENSITIVE);
         PatternBibliographyReferences cdRomDVD = new PatternBibliographyReferences("Libro en soporte CD-ROM/DVD",cdRomDVDBibliography);
+
 
         Pattern thesisBibliography = Pattern.compile("[^(]+\\([^)]+\\)\\..+", Pattern.CASE_INSENSITIVE);
         PatternBibliographyReferences thesis = new PatternBibliographyReferences("Tesis/Trabajo de titulación",thesisBibliography);
@@ -173,11 +186,13 @@ public class BiographyPageFormat implements  FormatRule {
         PatternBibliographyReferences book = new PatternBibliographyReferences("Libro",bookBibliography);
 
 
+
         if (lineWord.contains("http")){
             if( lineWord.contains("@")){
                 return discussionList;
             }else{
                 return pageWeb;
+
             }
         }
 
@@ -190,7 +205,9 @@ public class BiographyPageFormat implements  FormatRule {
         }
 
         if (lineWord.contains("CD-ROM") || lineWord.contains("DVD")){
+
             return cdRomDVD;
+
         }
 
         if (lineWord.contains("licenciatura") || lineWord.contains("Licenciatura") || lineWord.contains("titulación") || lineWord.contains("Titulación")){

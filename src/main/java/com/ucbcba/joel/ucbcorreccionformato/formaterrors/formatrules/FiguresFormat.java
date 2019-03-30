@@ -21,7 +21,6 @@ import org.apache.pdfbox.util.Matrix;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -46,7 +45,10 @@ public class FiguresFormat implements FormatRule {
         float pageWidth = pdfdocument.getPage(pageNum-1).getMediaBox().getWidth();
         float pageHeight = pdfdocument.getPage(pageNum-1).getMediaBox().getHeight();
         List<FormatErrorReport> formatErrors = new ArrayList<>();
-        final List<PdfImage> pdfImages = new ArrayList<PdfImage>();
+
+
+        final List<PdfImage> pdfImages = new ArrayList<>();
+
         ImageLocations imageLocations = new ImageLocations(){
             @Override
             protected void processOperator(Operator operator, List<COSBase> operands) throws IOException
@@ -76,16 +78,13 @@ public class FiguresFormat implements FormatRule {
         };
         imageLocations.processPage(page);
 
-        List<String> comments = new ArrayList<>();
-        if (pdfImages.size()<4) {
 
-            Collections.sort(pdfImages, new Comparator<PdfImage>() {
-                @Override
-                public int compare(PdfImage pdfImage1, PdfImage pdfImage2)
-                {
-                    return (int) (pdfImage1.getY() - pdfImage2.getY());
-                }
-            });
+
+        List<String> comments;
+        if (pdfImages.size()<4) {
+            // Sorting
+            Collections.sort(pdfImages, (PdfImage pdf1, PdfImage pdf2) -> (int) (pdf1.getY() - pdf2.getY()));
+
             for (PdfImage image : pdfImages) {
                 List<String> commentsFigure = new ArrayList<>();
                 WordsProperties figureNumerationWord = seeker.findFigureNumeration(image, pageNum);
@@ -104,7 +103,9 @@ public class FiguresFormat implements FormatRule {
                     commentsFigure.add("Tenga la fuente de la figura");
                 }
 
-                if (commentsFigure.isEmpty()) {
+
+
+                if (!commentsFigure.isEmpty()) {
                     StringBuilder commentStr = new StringBuilder();
                     for (int i = 0; i < commentsFigure.size(); i++) {
                         if (i != 0) {
@@ -134,7 +135,9 @@ public class FiguresFormat implements FormatRule {
     }
 
     private void reportFormatErrors(List<String> comments, WordsProperties words, List<FormatErrorReport> formatErrors, float pageWidth, float pageHeigh, int page) {
-        if (comments.isEmpty()) {
+
+
+        if (!comments.isEmpty()) {
             formatErrors.add(new ReportFormatError(counter).reportFormatError(comments, words, pageWidth, pageHeigh, page));
         }
     }

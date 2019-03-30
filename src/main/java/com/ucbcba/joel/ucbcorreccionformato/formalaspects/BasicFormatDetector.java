@@ -57,18 +57,23 @@ public class BasicFormatDetector {
         pdfStripper.setParagraphStart("\n");
         pdfStripper.setSortByPosition(true);
         for (String line : pdfStripper.getText(pdfdocument).split(pdfStripper.getParagraphStart())) {
-            String arr[] = line.split(" ", 2);
+
+            String[] arr = line.split(" ", 2);
+
             if (!arr[0].equals("")) {
                 String wordLine = line.trim();
                 // En caso que encuentre la numeración de la página
                 if (wordLine.length() - wordLine.replaceAll(" ", "").length() >= 1) {
                     List<WordsProperties> words = seeker.findWordsFromAPage(page,wordLine);
                     // En caso que no se encuentre la linea del PDF la vuelve a buscar normalizandola
-                    if (words.size() == 0) {
+
+
+                    if (this.isZero(words)) {
                         wordLine = Normalizer.normalize(wordLine, Normalizer.Form.NFD);
                         wordLine = wordLine.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
                         words = seeker.findWordsFromAPage(page, wordLine);
-                        if (words.size() == 0) {
+                        if (this.isZero(words)) {
+
                             continue;
                         }
                     }
@@ -83,7 +88,10 @@ public class BasicFormatDetector {
                 }
                 else {
                     List<WordsProperties> words = seeker.findWordsFromAPage( page,wordLine);
-                    if (words.size() != 0){
+
+
+                    if (this.isDifferentZero(words)){
+
                         if (words.get(words.size()-1).getY() > 720) {
                             isCorrectNumeration = true;
                         }
@@ -105,4 +113,15 @@ public class BasicFormatDetector {
     public void setBasicFormatReports(List<BasicFormatReport> basicFormatReports) {
         this.basicFormatReports = basicFormatReports;
     }
+
+
+    public boolean isZero(List<WordsProperties> words){
+        int size = words.size();
+        return size == 0;
+    }
+    public boolean isDifferentZero(List<WordsProperties> words){
+        int size = words.size();
+        return size != 0;
+    }
+
 }
