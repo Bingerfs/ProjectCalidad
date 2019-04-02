@@ -5,7 +5,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import java.io.IOException;
 
 public class PdfDocument {
-    private PDDocument pdfdocument;
+    private PDDocument documentpdf;
     private int coverPage;
     private int generalIndexPageStart;
     private int generalIndexPageEnd;
@@ -14,7 +14,7 @@ public class PdfDocument {
     private int annexedPageStart;
 
     public PdfDocument(PDDocument pdfdocument) throws IOException {
-        this.pdfdocument = pdfdocument;
+        this.documentpdf = pdfdocument;
         PagesSeeker seeker = new PagesSeeker(pdfdocument);
         this.coverPage = seeker.getCoverPage();
         this.generalIndexPageStart = seeker.getFirstGeneralIndexPage();
@@ -56,8 +56,8 @@ public class PdfDocument {
         this.annexedPageStart = annexedPageStart;
     }
 
-    public PDDocument getPdfdocument() {
-        return pdfdocument;
+    public PDDocument getDocumentpdf() {
+        return documentpdf;
     }
 
     public int getBiographyPageStart() {

@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsReport;
+package com.ucbcba.joel.ucbcorreccionformato.formaterrors.highlightsreport;
 
 import java.util.List;
 

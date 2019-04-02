@@ -1,4 +1,4 @@
-package com.ucbcba.joel.ucbcorreccionformato.uploadDownloadFile.Payload;
+package com.ucbcba.joel.ucbcorreccionformato.uploaddownloadfile.payload;
 
 public class UploadFileResponse {
     private String fileName;
